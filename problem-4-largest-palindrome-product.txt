@@ -1,0 +1,27 @@
+function largestPalindromeProduct(n) {
+  if (n==3) {
+    let arr = []
+    for (let i=999; i >= 100; i--) {
+      for(let j=999; j >= 100; j--) {
+        if (String(i*j) == reverse(String(i*j))) {
+          arr.push(i*j)
+        }
+      }
+    }
+    return Math.max(...arr)
+  } else if (n == 2){
+    for (let i=99; i >= 10; i--) {
+      for(let j=99; j >= 10; j--) {
+        if (String(i*j) == reverse(String(i*j))) {
+          return i*j
+        }
+      }
+    }
+  }
+}
+
+function reverse(str) {
+  return [...str].reverse().join("")
+}
+
+console.log(largestPalindromeProduct(3));
