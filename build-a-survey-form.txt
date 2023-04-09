@@ -1,0 +1,84 @@
+** start of undefined **
+
+<!Doctype html>
+<html lang="en">
+  <head>
+    <title> My Registartion Form at 01 Talent</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+<h1 id="title"> Registration At 01 Talent </h1>
+<p id="description">This form is for The registration at 01 Talent</p>
+<form id="survey-form">
+
+  <label for="name" id="name-label"> Enter your name : <input id="name" type="text" placeholder="Bakar..." name="name" required>
+  </label>
+
+  <label for="email" id="email-label"> Enter your email : <input
+  id="email" type="email" placeholder="seck.bakar@ugb.edu.sn" name="email" required>
+  </label>
+
+  <label for="number" id="number-label"> Enter your Age : <input id="number" type="number" min=18 max=100 placeholder="21" name="number">
+  </label>
+
+  <label>
+    Choose your speciallity : 
+    <select name="speciallity" id="dropdown">
+       <option value="">select a speciallity</option>
+      <option value="developper"> Developper</option>
+       <option value="designer">Designer</option>
+    </select>
+
+    <label>
+      <input type="radio" name="gender" value="feminin">Feminin</input>
+      <input type="radio" name="gender" value="masculin">Masculin</input>
+    </label>
+
+    <label>
+      <input type="checkbox" value="Manger">
+      Manger
+    </label>
+
+    <label>
+      <input type="checkbox" value="Dormir">
+      Dormir
+    </label>
+    
+
+    <textarea ></textarea>
+
+   <button id="submit" type="submit">Submit</button>
+</form>
+</body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+h1, p {
+  text-align: center;
+}
+
+input, select, label, textarea {
+  display: block;
+  margin: 10px;
+}
+
+input[type="radio"], input[type="checkbox"]{
+  display: inline-block;
+}
+
+form {
+  border-radius: 10px;
+  align-item: center;
+  padding: 50px 20;
+  margin: 0 auto;
+  background: blue;
+  width: 80vw;
+  max-width: 500px;
+  min-width: 300px; 
+}
+
+** end of undefined **
+
