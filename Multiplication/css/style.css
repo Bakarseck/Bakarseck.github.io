@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    background-image: url(../img/mult.png);
+    background-size: cover;
+    font-family: cursive;
+}
+
+.form {
+    background-color: white;
+    opacity: 0.8;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    border: solid 4px green;
+    color: green;
+    outline: none;
+    opacity: 1;
+}
+
+.input::placeholder {
+    color: gray;
+    font-family: cursive;
+}
+
+.btn {
+    background-color: green;
+    color: white;
+    border: none;
+    width: 100%;
+    border: none;
+    padding: 20px;
+    font-size: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.btn:hover {
+    filter: brightness(0.9);
+}
+
+.score {
+    color: green;
+    text-align: right;
+    opacity: 1;
+}
