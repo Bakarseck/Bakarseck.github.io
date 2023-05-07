@@ -46,7 +46,7 @@ body{
 .btn::before{
     content: "";
     position: absolute;
-    background: linear-gradient(to bottom, #990000, #ff0000);
+    background: linear-gradient(to top, #990000, #00FF00);
     width: 0;
     height: 0;
     left: var(--xPos);
