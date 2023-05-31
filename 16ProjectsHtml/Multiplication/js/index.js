@@ -31,11 +31,10 @@ formElement.addEventListener("submit", ()=> {
     if (userAnswer === correctAnswer) {
         score++
         updateLocalStorage();
-        alert("Correct Answer");
     } else {
         score--
         updateLocalStorage();
-        alert("Bad Answer")
+        // alert("Bad Answer")
     }
 } )
 
