@@ -1,0 +1,80 @@
+{{define "title"}} | {{ .Name }} {{end}}
+
+{{define "artist"}} <span>{{ .Name }}</span> {{end}}
+
+{{ define "content" }}
+
+<main>
+    <h1>{{.Name}}</h1>
+    <article>
+        <div class="glass">
+            <img src="{{.Image}}" alt="{{.Name}}" />
+            <h2>{{.Name}}</h2>
+            <div class="tags">
+                <p class="tag">Created at: {{.CreationDate}}</p>
+                <p class="tag">First Album: {{.FirstAlbum}}</p>
+            </div>
+            <h3>Members</h3>
+            <div class="tags">
+                {{range .Members}}
+                <p class="tag">{{.}}</p>
+                {{end}}
+            </div>
+        </div>
+        <div class="glass">
+            <h3>Concert Locations</h3>
+            <div class="tags">
+                {{range .Relation}}
+                <p class="tag place" data-place="{{.Country}} - {{.City}}">{{.Country}} - {{.City}}</p>
+                {{end}}
+            </div>
+        </div>
+        <div class="glass">
+            <h3>Concert Date</h3>
+            <div class="tags">
+                {{range $id, $location := .Relation}}
+                    {{range $location.Dates}}
+                    <p data-place="{{$location.Country}} - {{$location.City}}" class="tag date">{{.}}</p>
+                    {{end}}
+                {{end}}
+            </div>
+        </div>
+    </article>
+    <script>
+        const places = document.querySelectorAll('.place');
+        const dates = document.querySelectorAll('.date');
+
+        places.forEach((concert) => {
+            concert.addEventListener('mouseover', () => {
+                const concertPlace = concert.getAttribute('data-place');
+                const correspondingDates = document.querySelectorAll(`.tag.date[data-place="${concertPlace}"]`);
+                correspondingDates.forEach((date) => {
+                    date.classList.add("glowing")
+                })
+            });
+
+            concert.addEventListener('mouseout', () => {
+                const concertPlace = concert.getAttribute('data-place');
+                const correspondingDates = document.querySelectorAll(`.tag.date[data-place="${concertPlace}"]`);
+                correspondingDates.forEach((date) => {
+                    date.classList.remove("glowing")
+                })
+            });
+        });
+
+        dates.forEach((date) => {
+            date.addEventListener('mouseover', () => {
+                const concertPlace = date.getAttribute('data-place');
+                const correspondingConcert = document.querySelector(`.tag.place[data-place="${concertPlace}"]`);
+                correspondingConcert.classList.add("glowing")
+            });
+
+            date.addEventListener('mouseout', () => {
+                const concertPlace = date.getAttribute('data-place');
+                const correspondingConcert = document.querySelector(`.tag.place[data-place="${concertPlace}"]`);
+                correspondingConcert.classList.remove("glowing")
+            });
+        });
+    </script>
+</main>
+{{ end }}
