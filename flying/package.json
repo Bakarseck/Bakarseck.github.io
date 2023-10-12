@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "node-sass": "^9.0.0",
+    "pug": "^3.0.2",
+    "sass": "^1.69.3"
+  },
+  "scripts": {
+    "compile-scss": "node-sass styles.scss -o css",
+    "watch-scss": "node-sass -w styles.scss styles.css"
+  }
+}
