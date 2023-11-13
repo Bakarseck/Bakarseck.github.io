@@ -2,18 +2,17 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
-func main() {
-	args := os.Args[1:]
+// func main() {
+// 	args := os.Args[1:]
 
-	if len(args) != 1 {
-		return
-	}
-	b, p, c := 0, 0, 0
-	Brackets(args, p, b, c)
-}
+// 	if len(args) != 1 {
+// 		return
+// 	}
+// 	b, p, c := 0, 0, 0
+// 	Brackets(args, p, b, c)
+// }
 
 // The function checks if the brackets in a given string are balanced and prints "OK" if they are, or
 // "Error" if they are not.
